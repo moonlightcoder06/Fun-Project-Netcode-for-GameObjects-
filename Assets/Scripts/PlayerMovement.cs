@@ -9,8 +9,14 @@ public class PlayerMovement : MonoBehaviour
     private float verticalMovement;
     private float horizontalMovement;
     public float moveSpeed;
+
     // To solve diagonal speed issue i.e when you press w and a together player will move faster as compare to only pressing w,a,s,d at a time
     public float speedLimit;
+
+    // For smooth movement
+    private Vector2 smoothedMovementInput;
+        // To keep track of the velocity change becuase it is required by SmoothDamp function
+    private Vector2 movementInputSmoothVelocity;
 
     // Start is called before the first frame update
     void Start() {
@@ -34,7 +40,15 @@ public class PlayerMovement : MonoBehaviour
         }
         // ******************** DIAGONAL SPEED ENDS ********************
 
-        rigidBody.velocity = new Vector2(horizontalMovement * moveSpeed, verticalMovement * moveSpeed);
+        // ******************** SMOOTH SPEED STARTS ********************
+        smoothedMovementInput = Vector2.SmoothDamp(smoothedMovementInput,
+            new Vector2(horizontalMovement * moveSpeed, verticalMovement * moveSpeed),
+            ref movementInputSmoothVelocity,
+            0.1f
+            );
+        // ******************** SMOOTH SPEED ENDS ********************
+
+        rigidBody.velocity = smoothedMovementInput;
     }
 
 } // class
