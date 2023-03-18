@@ -31,11 +31,20 @@ public class BulletScript : MonoBehaviour
         Vector3 rotation = transform.position - currentMousePos;
         float rotz = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rotz);
+
+        // If bullet deosn't hit any wall or ground then self destruct after 2 seconds
+        Invoke("SelfDestruct", 2);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.layer == 6) // When bullet hits ground i.e "Wall" then destroy itself.
+        {
+            Destroy(gameObject);
+        }
     }
+
+    void SelfDestruct() {
+        Destroy(gameObject);
+    }
+
 } // Class
