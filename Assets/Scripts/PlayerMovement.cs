@@ -18,9 +18,18 @@ public class PlayerMovement : MonoBehaviour
         // To keep track of the velocity change becuase it is required by SmoothDamp function
     private Vector2 movementInputSmoothVelocity;
 
+    // DASH
+    private float activeMoveSpeed;
+    public float dashSpeed;
+    public float dashLength = 0.5f, dashCoolDown = 1f;
+    private float dashCounter;
+    private float dashCoolCounter;
+
     // Start is called before the first frame update
     void Start() {
         rigidBody = GetComponent<Rigidbody2D>();
+        //DASH
+        activeMoveSpeed = moveSpeed;
     }
 
     // Always check for inputs in Update because it runs every frame
@@ -28,7 +37,28 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMovement = Input.GetAxisRaw("Horizontal");
         verticalMovement = Input.GetAxisRaw("Vertical");
-    }
+
+        //DASH
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+            if (dashCoolCounter <= 0 && dashCounter <= 0) {
+                activeMoveSpeed = dashSpeed;
+                dashCounter = dashLength;
+            }
+        }
+
+        if (dashCounter > 0) {
+            dashCounter -= Time.deltaTime;
+
+            if (dashCounter <= 0) {
+                activeMoveSpeed = moveSpeed;
+                dashCoolCounter = dashCoolDown;
+            }
+        }
+
+        if (dashCoolDown > 0) { 
+            dashCoolCounter -= Time.deltaTime;
+        }
+    } // Update
 
     // Everything regarding physics will go in FixedUpdate 
     private void FixedUpdate() {
@@ -42,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
         // ******************** SMOOTH SPEED STARTS ********************
         smoothedMovementInput = Vector2.SmoothDamp(smoothedMovementInput,
-            new Vector2(horizontalMovement * moveSpeed, verticalMovement * moveSpeed),
+            new Vector2(horizontalMovement * activeMoveSpeed, verticalMovement * activeMoveSpeed),
             ref movementInputSmoothVelocity,
             0.1f
             );
