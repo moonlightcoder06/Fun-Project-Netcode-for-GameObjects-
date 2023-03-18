@@ -28,9 +28,13 @@ public class PlayerMovement : MonoBehaviour
     // DASH TRAIL
     [SerializeField] private TrailRenderer trailRenderer;
 
+    // To turn off collider during dash
+    private BoxCollider2D boxCollider;
+
     // Start is called before the first frame update
     void Start() {
         rigidBody = GetComponent<Rigidbody2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         //DASH
         activeMoveSpeed = moveSpeed;
     }
@@ -44,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         //DASH
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             if (dashCoolCounter <= 0 && dashCounter <= 0) {
+                boxCollider.enabled = false;
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
                 trailRenderer.emitting = true;
@@ -57,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
                 activeMoveSpeed = moveSpeed;
                 trailRenderer.emitting = false;
                 dashCoolCounter = dashCoolDown;
+                boxCollider.enabled = true;
             }
         }
 
