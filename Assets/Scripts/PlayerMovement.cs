@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     private float dashCounter;
     private float dashCoolCounter;
 
+    // DASH TRAIL
+    [SerializeField] private TrailRenderer trailRenderer;
+
     // Start is called before the first frame update
     void Start() {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -43,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
             if (dashCoolCounter <= 0 && dashCounter <= 0) {
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
+                trailRenderer.emitting = true;
             }
         }
 
@@ -51,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (dashCounter <= 0) {
                 activeMoveSpeed = moveSpeed;
+                trailRenderer.emitting = false;
                 dashCoolCounter = dashCoolDown;
             }
         }
