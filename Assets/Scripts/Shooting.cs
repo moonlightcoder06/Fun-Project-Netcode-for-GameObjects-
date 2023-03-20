@@ -61,6 +61,7 @@ public class Shooting : MonoBehaviour
             // Eg : If we set timeBetweenFiring as 5 seconds then play can shoot bullet in every 5 seconds
             if (timer > timeBetweenFiring) {
                 canFire = true;
+
                 // Because timer will go up and up and this condition will always be true, thats why we are setting it back to 0
                 timer = 0;
             }
@@ -68,8 +69,13 @@ public class Shooting : MonoBehaviour
 
         // To make sure that player can't shoot frequently
         if (Input.GetMouseButton(0) && canFire) {
+
             canFire = false;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+
+            //Adding camera shake
+            CameraShake.Instance.ShakeCamera(0.25f, 0.2f);
+
         }
         // ******************** BULLET FIRING ENDS ********************
     } // Update

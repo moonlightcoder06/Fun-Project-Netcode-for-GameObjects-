@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
     // Using rigidbody we are going to move our player
@@ -32,7 +33,8 @@ public class PlayerMovement : MonoBehaviour {
     private BoxCollider2D boxCollider;
 
     // DASH Indicator
-    [SerializeField] private TextMeshProUGUI dashIndicatorText;
+    // [SerializeField] private TextMeshProUGUI dashIndicatorText;
+    [SerializeField] private Image dashIndicatorText;
 
     // Start is called before the first frame update
     void Start() {
@@ -54,7 +56,11 @@ public class PlayerMovement : MonoBehaviour {
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
                 trailRenderer.emitting = true;
-                dashIndicatorText.color = new Color(255, 254, 0, 0.1f);
+
+                //Adding camera shake
+                CameraShake.Instance.ShakeCamera(1f, 0.2f);
+
+                dashIndicatorText.color = new Color(255, 254, 0, 0.5f);
             }
         }
 
