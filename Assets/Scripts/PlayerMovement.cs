@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class PlayerMovement : MonoBehaviour
-{
+public class PlayerMovement : MonoBehaviour {
     // Using rigidbody we are going to move our player
     private Rigidbody2D rigidBody;
     private float verticalMovement;
@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     // For smooth movement
     private Vector2 smoothedMovementInput;
-        // To keep track of the velocity change becuase it is required by SmoothDamp function
+    // To keep track of the velocity change becuase it is required by SmoothDamp function
     private Vector2 movementInputSmoothVelocity;
 
     // DASH
@@ -31,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
     // To turn off collider during dash
     private BoxCollider2D boxCollider;
 
+    // DASH Indicator
+    [SerializeField] private TextMeshProUGUI dashIndicatorText;
+
     // Start is called before the first frame update
     void Start() {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -40,8 +43,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Always check for inputs in Update because it runs every frame
-    void Update()
-    {
+    void Update() {
         horizontalMovement = Input.GetAxisRaw("Horizontal");
         verticalMovement = Input.GetAxisRaw("Vertical");
 
@@ -52,12 +54,12 @@ public class PlayerMovement : MonoBehaviour
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
                 trailRenderer.emitting = true;
+                dashIndicatorText.color = new Color(255, 254, 0, 0.1f);
             }
         }
 
         if (dashCounter > 0) {
             dashCounter -= Time.deltaTime;
-
             if (dashCounter <= 0) {
                 activeMoveSpeed = moveSpeed;
                 trailRenderer.emitting = false;
@@ -66,8 +68,12 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (dashCoolDown > 0) { 
+        if (dashCoolDown > 0) {
             dashCoolCounter -= Time.deltaTime;
+        }
+
+        if (dashCoolCounter <= 0 && dashCounter <= 0) {
+            dashIndicatorText.color = new Color(255, 254, 0, 1f);
         }
     } // Update
 
