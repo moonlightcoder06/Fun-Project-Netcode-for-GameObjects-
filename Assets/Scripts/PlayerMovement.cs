@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
+using Unity.VisualScripting;
 
 public class PlayerMovement : MonoBehaviour {
     // Using rigidbody we are going to move our player
@@ -32,6 +34,11 @@ public class PlayerMovement : MonoBehaviour {
     // Dash Particle
     [SerializeField] private ParticleSystem trailParticle;
 
+    // Getting Post Process Global
+    [SerializeField] private PostProcessVolume postProcess;
+    private LensDistortion LensDist;
+    private ChromaticAberration ChromeAb;
+
     // To turn off collider during dash
     private BoxCollider2D boxCollider;
 
@@ -39,13 +46,20 @@ public class PlayerMovement : MonoBehaviour {
     // [SerializeField] private TextMeshProUGUI dashIndicatorText;
     [SerializeField] private Image dashIndicatorText;
 
+
     // Start is called before the first frame update
     void Start() {
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         //DASH
         activeMoveSpeed = moveSpeed;
+        // For Trail Particle
         trailParticle.Stop();
+
+        // Getting LensDistortion
+        postProcess.profile.TryGetSettings(out  LensDist);
+        postProcess.profile.TryGetSettings(out ChromeAb);
+
     }
 
     // Always check for inputs in Update because it runs every frame
@@ -60,7 +74,14 @@ public class PlayerMovement : MonoBehaviour {
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
                 trailRenderer.emitting = true;
+
+                // For Trail Particle
                 trailParticle.Play();
+
+                // Adding LensDist
+                LensDist.intensity.value = Mathf.Lerp(-10.0f, -50.0f, Time.deltaTime * 300);
+
+                ChromeAb.intensity.value = Mathf.Lerp(0.35f, 3.0f, Time.deltaTime * 300);
 
                 //Adding camera shake
                 CameraShake.Instance.ShakeCamera(1f, 0.2f);
@@ -74,7 +95,15 @@ public class PlayerMovement : MonoBehaviour {
             if (dashCounter <= 0) {
                 activeMoveSpeed = moveSpeed;
                 trailRenderer.emitting = false;
+
+                // For Trail Particle
                 trailParticle.Stop();
+
+                // Adding LensDist
+                LensDist.intensity.value = -10.0f;
+
+                ChromeAb.intensity.value = 0.35f;
+
                 dashCoolCounter = dashCoolDown;
                 boxCollider.enabled = true;
             }
@@ -87,6 +116,7 @@ public class PlayerMovement : MonoBehaviour {
         if (dashCoolCounter <= 0 && dashCounter <= 0) {
             dashIndicatorText.color = new Color(255, 254, 0, 1f);
         }
+
     } // Update
 
     // Everything regarding physics will go in FixedUpdate 

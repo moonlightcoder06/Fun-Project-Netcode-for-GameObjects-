@@ -594,9 +594,10 @@ MonoBehaviour:
   speedLimit: 0.7
   dashSpeed: 15
   dashLength: 0.2
-  dashCoolDown: 1
+  dashCoolDown: 2
   trailRenderer: {fileID: 353984340}
   trailParticle: {fileID: 353984341}
+  postProcess: {fileID: 417456929}
   dashIndicatorText: {fileID: 156554832}
 --- !u!96 &353984340
 TrailRenderer:
@@ -714,7 +715,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353984334}
   serializedVersion: 8
-  lengthInSec: 2
+  lengthInSec: 2.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -842,7 +843,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 20
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3353,7 +3354,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 1
+    enabled: 0
     strength:
       serializedVersion: 2
       minMaxState: 0
@@ -5590,7 +5591,7 @@ MonoBehaviour:
   isGlobal: 1
   blendDistance: 0
   weight: 1
-  priority: 0
+  priority: 1
 --- !u!1 &519052825
 GameObject:
   m_ObjectHideFlags: 0

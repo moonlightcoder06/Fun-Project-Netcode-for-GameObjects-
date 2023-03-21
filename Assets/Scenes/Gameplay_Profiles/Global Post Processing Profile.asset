@@ -78,7 +78,7 @@ MonoBehaviour:
     value: 0.4
   smoothness:
     overrideState: 1
-    value: 0.5
+    value: 0.2
   roundness:
     overrideState: 1
     value: 1
@@ -109,9 +109,9 @@ MonoBehaviour:
   - {fileID: -3607014754516456218}
   - {fileID: -588662268548429831}
   - {fileID: -6360882689751475663}
-  - {fileID: 6014483159725082523}
   - {fileID: 9119024749155917303}
---- !u!114 &6014483159725082523
+  - {fileID: 235979781305216597}
+--- !u!114 &235979781305216597
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,16 +222,16 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 0
+    value: 1
   intensity:
     overrideState: 1
     value: -10
   intensityX:
     overrideState: 1
-    value: 0.5
+    value: 0.8
   intensityY:
     overrideState: 1
-    value: 0.5
+    value: 0.8
   centerX:
     overrideState: 1
     value: 0
