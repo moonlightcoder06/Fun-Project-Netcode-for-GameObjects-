@@ -29,6 +29,9 @@ public class PlayerMovement : MonoBehaviour {
     // DASH TRAIL
     [SerializeField] private TrailRenderer trailRenderer;
 
+    // Dash Particle
+    [SerializeField] private ParticleSystem trailParticle;
+
     // To turn off collider during dash
     private BoxCollider2D boxCollider;
 
@@ -42,6 +45,7 @@ public class PlayerMovement : MonoBehaviour {
         boxCollider = GetComponent<BoxCollider2D>();
         //DASH
         activeMoveSpeed = moveSpeed;
+        trailParticle.Stop();
     }
 
     // Always check for inputs in Update because it runs every frame
@@ -56,6 +60,7 @@ public class PlayerMovement : MonoBehaviour {
                 activeMoveSpeed = dashSpeed;
                 dashCounter = dashLength;
                 trailRenderer.emitting = true;
+                trailParticle.Play();
 
                 //Adding camera shake
                 CameraShake.Instance.ShakeCamera(1f, 0.2f);
@@ -69,6 +74,7 @@ public class PlayerMovement : MonoBehaviour {
             if (dashCounter <= 0) {
                 activeMoveSpeed = moveSpeed;
                 trailRenderer.emitting = false;
+                trailParticle.Stop();
                 dashCoolCounter = dashCoolDown;
                 boxCollider.enabled = true;
             }

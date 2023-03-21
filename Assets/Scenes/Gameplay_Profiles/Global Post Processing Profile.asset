@@ -44,10 +44,10 @@ MonoBehaviour:
     value: 1
   shutterAngle:
     overrideState: 1
-    value: 200
+    value: 230
   sampleCount:
     overrideState: 1
-    value: 20
+    value: 10
 --- !u!114 &-588662268548429831
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -178,7 +178,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 5
+    value: 6
   threshold:
     overrideState: 1
     value: 1
@@ -192,8 +192,8 @@ MonoBehaviour:
     overrideState: 1
     value: 10
   anamorphicRatio:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: -1
   color:
     overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}
@@ -202,11 +202,11 @@ MonoBehaviour:
     value: 0
   dirtTexture:
     overrideState: 0
-    value: {fileID: 0}
+    value: {fileID: 2800000, guid: c94b57b5a32a22d43ade66e09f6a4bd2, type: 3}
     defaultState: 1
   dirtIntensity:
     overrideState: 0
-    value: 0
+    value: 10
 --- !u!114 &9119024749155917303
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -225,13 +225,13 @@ MonoBehaviour:
     value: 0
   intensity:
     overrideState: 1
-    value: -5
+    value: -10
   intensityX:
     overrideState: 1
-    value: 1
+    value: 0.5
   intensityY:
     overrideState: 1
-    value: 1
+    value: 0.5
   centerX:
     overrideState: 1
     value: 0
