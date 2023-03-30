@@ -239,7 +239,7 @@ TextureImporter:
         width: 48
         height: 42
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -247,6 +247,27 @@ TextureImporter:
       bones: []
       spriteID: 40e9d6edd4cf0114a9ee7ea5bf49c2de
       internalID: 2117973576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackHole
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 260
+        width: 317
+        height: 321
+      alignment: 9
+      pivot: {x: 0.50802284, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf8aa5db5a0d024a8b7d22298885256
+      internalID: 473281490
       vertices: []
       indices: 
       edges: []
@@ -263,6 +284,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Bar: -1285230141
+      BlackHole: 473281490
       Body: 1357204674
       Dash: 103917954
       Gun: -127546117
