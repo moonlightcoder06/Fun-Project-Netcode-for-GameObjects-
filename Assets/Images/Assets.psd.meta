@@ -272,6 +272,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Tri
+      rect:
+        serializedVersion: 2
+        x: 1267
+        y: 362
+        width: 167
+        height: 144
+      alignment: 9
+      pivot: {x: 0.50766706, y: 0.36547258}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb7b8d50ee5d9b4db2091c5a0e230d8
+      internalID: -1972587914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -290,6 +311,7 @@ TextureImporter:
       Gun: -127546117
       Missile: 2117973576
       Soot: -1473801395
+      Tri: -1972587914
       Trial: 1119601559
   spritePackingTag: 
   pSDRemoveMatte: 0

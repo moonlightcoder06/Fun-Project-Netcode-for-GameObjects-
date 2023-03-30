@@ -5,14 +5,19 @@ using UnityEngine;
 public class PlayerAttraction: MonoBehaviour {
     public float attractionForce = 20.0f;
     public float maxDistance = 5.0f;
+    public int damagePerSecond = 10;
 
     private GameObject player;
+    private GameObject healthManager;
 
     void Start() {
+
         player = GameObject.FindWithTag("Player");
+        healthManager = GameObject.FindWithTag("HealthManager");
     }
 
     void Update() {
+
         // Attract the player towards the GameObject
         Vector3 direction = transform.position - player.transform.position;
         float distance = direction.magnitude;
@@ -22,5 +27,25 @@ public class PlayerAttraction: MonoBehaviour {
             Vector3 force = direction.normalized * forceMagnitude;
             player.GetComponent<Rigidbody2D>().AddForce(force);
         }
+
+        // Check if player is colliding with the GameObject
+        if (IsCollidingWithPlayer()) {
+            // Reduce player's health by damagePerSecond
+            healthManager.GetComponent<HealthManager>().TakeDamage(damagePerSecond * Time.deltaTime);
+        }
+    }
+
+
+    bool IsCollidingWithPlayer() {
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, transform.localScale.x / 2);
+
+        foreach (Collider2D collider in colliders) {
+            if (collider.CompareTag("Player")) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
