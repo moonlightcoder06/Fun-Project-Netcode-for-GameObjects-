@@ -21,7 +21,7 @@ public class NearestPlayerFinder : MonoBehaviour {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, searchRadius, LayerMask.GetMask("Player"));
         if (colliders.Length == 0) {
             nearestPlayer = null; // no players within range
-            print("no players within range");
+            //print("no players within range");
             return;
         }
 
@@ -41,7 +41,7 @@ public class NearestPlayerFinder : MonoBehaviour {
 
         // do something with the nearest player
         if (nearestPlayer != null) {
-            Debug.Log("Nearest player: " + nearestPlayer.name);
+            //Debug.Log("Nearest player: " + nearestPlayer.name);
             if (aimAndShootScript != null) { 
             aimAndShootScript.AimAtNearestPlayer(nearestPlayer, transform);
             }

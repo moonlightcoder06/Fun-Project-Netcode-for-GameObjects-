@@ -24,7 +24,13 @@ public class EnemyHealthManager : MonoBehaviour
     } // TakeDamage
 
     void SelfDestruct() {
-        Destroy(transform.parent.gameObject);
+        if (transform.parent != null) {
+            // Parent GameObject exists
+            Destroy(transform.parent.gameObject);
+        } else {
+            // Parent GameObject does not exist
+            Destroy(gameObject);
+        }
         Destroy(healthCanvas);
     } // SelfDestruct
 

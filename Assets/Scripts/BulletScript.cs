@@ -13,6 +13,7 @@ public class BulletScript : MonoBehaviour
     public float force;
 
     public float bulletDamageAmountToCanonEnemy = 15f;
+    public float bulletDamageAmountToSucidialEnemy = 25f;
 
     // Start is called before the first frame update
     void Start()
@@ -42,8 +43,11 @@ public class BulletScript : MonoBehaviour
         if (collision.gameObject.layer == 6) // When bullet hits ground i.e "Wall" then destroy itself.
         {
             Destroy(gameObject);
-        } else if (collision.CompareTag("Enemy")) {
+        } else if (collision.CompareTag("CanonEnemy")) {
             collision.transform.GetChild(1).GetComponent<EnemyHealthManager>().TakeDamage(bulletDamageAmountToCanonEnemy);
+            SelfDestruct();
+        } else if (collision.CompareTag("SucidialEnemy")) {
+            collision.GetComponent<EnemyHealthManager>().TakeDamage(bulletDamageAmountToSucidialEnemy);
             SelfDestruct();
         }
     }

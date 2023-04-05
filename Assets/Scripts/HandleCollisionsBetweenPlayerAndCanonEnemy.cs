@@ -24,7 +24,7 @@ public class HandleCollisionsBetweenPlayerAndCanonEnemy : MonoBehaviour
     void OnCollisionExit2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
             isTouchingPlayer = false;
-            print("Player And Enemy Are no longer in contact");
+            //print("Player And Enemy Are no longer in contact");
             if (damageCoroutine != null) {
                 StopCoroutine(damageCoroutine);
                 damageCoroutine = null;
@@ -35,7 +35,7 @@ public class HandleCollisionsBetweenPlayerAndCanonEnemy : MonoBehaviour
     void ApplyInstantDamage(Collision2D player) {
         // Apply instant damage to the player
         player.transform.GetChild(1).GetComponent<PlayerHealthManager>().TakeDamage(instantDamage);
-        print("Applied Instant Damage : " + player.transform.GetChild(1).GetComponent<PlayerHealthManager>().healthAmount);
+        //print("Applied Instant Damage : " + player.transform.GetChild(1).GetComponent<PlayerHealthManager>().healthAmount);
     } // ApplyInstantDamage
 
     IEnumerator ApplyOngoingDamage(Collision2D player) {
@@ -43,7 +43,7 @@ public class HandleCollisionsBetweenPlayerAndCanonEnemy : MonoBehaviour
             yield return new WaitForSeconds(damageInterval);
             // Apply ongoing damage to the player
             player.transform.GetChild(1).GetComponent<PlayerHealthManager>().TakeDamage(ongoingDamage);
-            print("Ongoing Damage : " + player.transform.GetChild(1).GetComponent<PlayerHealthManager>().healthAmount);
+            //print("Ongoing Damage : " + player.transform.GetChild(1).GetComponent<PlayerHealthManager>().healthAmount);
         }
     } // ApplyOngoingDamage
 
