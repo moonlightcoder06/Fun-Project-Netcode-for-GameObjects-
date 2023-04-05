@@ -6,11 +6,13 @@ TagManager:
   tags:
   - BlackHole
   - HealthManager
+  - SucidialEnemy
+  - CanonEnemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Wall

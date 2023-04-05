@@ -31,7 +31,7 @@ public class PlayerAttraction: MonoBehaviour {
         // Check if player is colliding with the GameObject
         if (IsCollidingWithPlayer()) {
             // Reduce player's health by damagePerSecond
-            healthManager.GetComponent<HealthManager>().TakeDamage(damagePerSecond * Time.deltaTime);
+            healthManager.GetComponent<PlayerHealthManager>().TakeDamage(damagePerSecond * Time.deltaTime);
         }
     }
 

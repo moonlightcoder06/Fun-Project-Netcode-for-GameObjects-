@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlackHole : MonoBehaviour
+public class RandomSpawnning : MonoBehaviour
 {
-
-    public GameObject blackHole;
-    public float spawnInterval = 15.0f;
-    public float rotationSpeed = 50.0f;
+    public GameObject Enemy;
+    public float spawnInterval = 10.0f;
 
     private GameObject spawnedObject;
 
@@ -28,13 +26,11 @@ public class BlackHole : MonoBehaviour
         Vector3 randomPosition = new Vector3(Random.Range(screenLeft, screenRight), Random.Range(screenBottom, screenTop), 0);
 
         // Instantiating the GameObject at the random position
-        spawnedObject = Instantiate(blackHole, randomPosition, Quaternion.identity);
-
+        // spawnedObject = Instantiate(Enemy, randomPosition, Quaternion.identity);
+        Instantiate(Enemy, randomPosition, Quaternion.identity);
         // Attaching the Rotating script
-        spawnedObject.AddComponent<RotationAndScaling>();
-        spawnedObject.AddComponent<PlayerAttraction>();
+        print("SPawn completed");
 
-        print("Black completed");
     }
-
 }
+
