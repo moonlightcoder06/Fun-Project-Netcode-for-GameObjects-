@@ -8,12 +8,12 @@ public class PlayerAttraction: MonoBehaviour {
     public int damagePerSecond = 10;
 
     private GameObject player;
-    private GameObject healthManager;
+    private GameObject playerHealthManager;
 
     void Start() {
 
         player = GameObject.FindWithTag("Player");
-        healthManager = GameObject.FindWithTag("HealthManager");
+        playerHealthManager = GameObject.FindWithTag("HealthManager");
     }
 
     void Update() {
@@ -31,7 +31,7 @@ public class PlayerAttraction: MonoBehaviour {
         // Check if player is colliding with the GameObject
         if (IsCollidingWithPlayer()) {
             // Reduce player's health by damagePerSecond
-            healthManager.GetComponent<PlayerHealthManager>().TakeDamage(damagePerSecond * Time.deltaTime);
+            playerHealthManager.GetComponent<PlayerHealthManager>().TakeDamage(damagePerSecond * Time.deltaTime);
         }
     }
 

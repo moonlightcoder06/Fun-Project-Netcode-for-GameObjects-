@@ -293,6 +293,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: TurretBody
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 60
+        width: 271
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f861d8585429894bb192eb47741afc8
+      internalID: -641271364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TurretGun
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 56
+        width: 430
+        height: 268
+      alignment: 9
+      pivot: {x: 0.32885587, y: 0.51120776}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba29354c98ef7e458c402bc719ab2b8
+      internalID: 379256238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -313,6 +355,8 @@ TextureImporter:
       Soot: -1473801395
       Tri: -1972587914
       Trial: 1119601559
+      TurretBody: -641271364
+      TurretGun: 379256238
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1

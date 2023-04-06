@@ -12,6 +12,7 @@ public class RandomSpawnning : MonoBehaviour
 
     void Start() {
         InvokeRepeating("SpawnGameObject", spawnInterval, spawnInterval);
+  
     }
 
 
@@ -22,8 +23,10 @@ public class RandomSpawnning : MonoBehaviour
         float screenTop = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height, 0)).y;
         float screenBottom = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0)).y;
 
+        float center = 8f;
+
         // Generating a random position within the boundaries
-        Vector3 randomPosition = new Vector3(Random.Range(screenLeft, screenRight), Random.Range(screenBottom, screenTop), 0);
+        Vector3 randomPosition = new Vector3(Random.Range(screenLeft - center , screenRight + center), Random.Range(screenBottom - center, screenTop + center), 0);
 
         // Instantiating the GameObject at the random position
         // spawnedObject = Instantiate(Enemy, randomPosition, Quaternion.identity);

@@ -6,10 +6,16 @@ public class HandleCollisionBetweenPlayerAndSucidalEnemy : MonoBehaviour
 {
 
     public int giveDamageToPlayer = 25;
+    private GameObject playerHealthManager;
+
+    void Start() {
+
+        playerHealthManager = GameObject.FindWithTag("HealthManager");
+    }
 
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
-            collision.gameObject.GetComponent<PlayerHealthManager>().TakeDamage(giveDamageToPlayer);
+            playerHealthManager.GetComponent<PlayerHealthManager>().TakeDamage(giveDamageToPlayer);
             SelfDestruct();
         }
     } // OnCollisionEnter2D

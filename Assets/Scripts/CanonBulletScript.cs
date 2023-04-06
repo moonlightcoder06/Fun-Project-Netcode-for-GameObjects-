@@ -9,6 +9,12 @@ public class CanonBulletScript : MonoBehaviour
     public float bulletSpeed = 10f;
     public float bulletDamageAmountToPlayer = 5f;
 
+    private GameObject playerHealthManager;
+
+    private void Start() {
+        playerHealthManager = GameObject.FindWithTag("HealthManager");
+    }
+
     public void ApplyForceOnBullet(Vector3 direction) {
 
         rigidBody = GetComponent<Rigidbody2D>();
@@ -25,7 +31,7 @@ public class CanonBulletScript : MonoBehaviour
             Destroy(gameObject);
         } else if (collision.CompareTag("Player")) {
             //collision.transform.GetChild(1).GetComponent<PlayerHealthManager>().TakeDamage(bulletDamageAmountToPlayer);
-            collision.gameObject.GetComponent<PlayerHealthManager>().TakeDamage(bulletDamageAmountToPlayer);
+            playerHealthManager.GetComponent<PlayerHealthManager>().TakeDamage(bulletDamageAmountToPlayer);
             SelfDestruct();
         }
     }

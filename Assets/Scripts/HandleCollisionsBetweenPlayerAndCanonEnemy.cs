@@ -12,6 +12,11 @@ public class HandleCollisionsBetweenPlayerAndCanonEnemy : MonoBehaviour
     public float damageInterval = 1f;
     private bool isTouchingPlayer = false;
     private Coroutine damageCoroutine = null;
+    private GameObject playerHealthManager;
+
+    private void Start() {
+        playerHealthManager = GameObject.FindWithTag("HealthManager");
+    }
 
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Player")) {
@@ -34,7 +39,8 @@ public class HandleCollisionsBetweenPlayerAndCanonEnemy : MonoBehaviour
 
     void ApplyInstantDamage(Collision2D player) {
         // Apply instant damage to the player
-        player.gameObject.GetComponent<PlayerHealthManager>().TakeDamage(instantDamage);
+        //player.gameObject.GetComponent<PlayerHealthManager>().TakeDamage(instantDamage);
+        playerHealthManager.GetComponent<PlayerHealthManager>().TakeDamage(instantDamage);
        
         //print("Applied Instant Damage : " + player.transform.GetChild(1).GetComponent<PlayerHealthManager>().healthAmount);
     } // ApplyInstantDamage
@@ -44,7 +50,8 @@ public class HandleCollisionsBetweenPlayerAndCanonEnemy : MonoBehaviour
             yield return new WaitForSeconds(damageInterval);
             // Apply ongoing damage to the player
             //player.transform.GetChild(1).GetComponent<PlayerHealthManager>().TakeDamage(ongoingDamage);
-            player.gameObject.GetComponent<PlayerHealthManager>().TakeDamage(ongoingDamage);
+            //player.gameObject.GetComponent<PlayerHealthManager>().TakeDamage(ongoingDamage);
+            playerHealthManager.GetComponent<PlayerHealthManager>().TakeDamage(ongoingDamage);
             //print("Ongoing Damage : " + player.transform.GetChild(1).GetComponent<PlayerHealthManager>().healthAmount);
         }
     } // ApplyOngoingDamage
