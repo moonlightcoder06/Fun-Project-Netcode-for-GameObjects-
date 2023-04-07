@@ -32,7 +32,7 @@ public class RandomSpawnning : MonoBehaviour
         // spawnedObject = Instantiate(Enemy, randomPosition, Quaternion.identity);
         Instantiate(Enemy, randomPosition, Quaternion.identity);
         // Attaching the Rotating script
-        print("SPawn completed");
+      
 
     }
 }

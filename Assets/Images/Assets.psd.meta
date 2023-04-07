@@ -108,10 +108,10 @@ TextureImporter:
       name: Soot
       rect:
         serializedVersion: 2
-        x: 66
-        y: 667
-        width: 395
-        height: 370
+        x: 45
+        y: 751
+        width: 322
+        height: 292
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,8 +129,8 @@ TextureImporter:
       name: Body
       rect:
         serializedVersion: 2
-        x: 805
-        y: 659
+        x: 473
+        y: 716
         width: 312
         height: 311
       alignment: 0
@@ -150,8 +150,8 @@ TextureImporter:
       name: Gun
       rect:
         serializedVersion: 2
-        x: 1164
-        y: 679
+        x: 831
+        y: 741
         width: 478
         height: 260
       alignment: 9
@@ -171,8 +171,8 @@ TextureImporter:
       name: Bar
       rect:
         serializedVersion: 2
-        x: 203
-        y: 443
+        x: 25
+        y: 628
         width: 352
         height: 28
       alignment: 0
@@ -192,8 +192,8 @@ TextureImporter:
       name: Dash
       rect:
         serializedVersion: 2
-        x: 628
-        y: 437
+        x: 450
+        y: 622
         width: 55
         height: 43
       alignment: 0
@@ -213,8 +213,8 @@ TextureImporter:
       name: Trial
       rect:
         serializedVersion: 2
-        x: 898
-        y: 401
+        x: 553
+        y: 597
         width: 94
         height: 92
       alignment: 0
@@ -234,8 +234,8 @@ TextureImporter:
       name: Missile
       rect:
         serializedVersion: 2
-        x: 560
-        y: 440
+        x: 382
+        y: 625
         width: 48
         height: 42
       alignment: 0
@@ -255,10 +255,10 @@ TextureImporter:
       name: BlackHole
       rect:
         serializedVersion: 2
-        x: 847
-        y: 260
-        width: 317
-        height: 321
+        x: 1332
+        y: 692
+        width: 334
+        height: 335
       alignment: 9
       pivot: {x: 0.50802284, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,12 +276,12 @@ TextureImporter:
       name: Tri
       rect:
         serializedVersion: 2
-        x: 1267
-        y: 362
-        width: 167
-        height: 144
+        x: 30
+        y: 405
+        width: 169
+        height: 152
       alignment: 9
-      pivot: {x: 0.50766706, y: 0.36547258}
+      pivot: {x: 0.50219005, y: 0.3804261}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,7 +302,7 @@ TextureImporter:
         width: 271
         height: 266
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -335,6 +335,153 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Wall
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 355
+        width: 46
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19bc9fe57af2b794e8ccaeeeacec9294
+      internalID: 578498118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LWall
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 348
+        width: 230
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2eb27ba790d62f4bae04d11e9d3fd4e
+      internalID: -151988195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlusWall
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 351
+        width: 233
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72851bd5231e0bd4490fe3923fc35b9b
+      internalID: 1821458270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BoxWall
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 350
+        width: 228
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95bc803ed3e2feb4bb84bd21eddbf25b
+      internalID: -1348070567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MFWall
+      rect:
+        serializedVersion: 2
+        x: 1218
+        y: 355
+        width: 221
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e4df80dc5780542b3d564bb916a960
+      internalID: -460554574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IWall
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 357
+        width: 220
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f231fbb8f90e043b840d601d215a82
+      internalID: 1810403927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heart
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 79
+        width: 222
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb85cbb9fb20934d8175af1655d1b6d
+      internalID: 1610008353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -349,14 +496,21 @@ TextureImporter:
       Bar: -1285230141
       BlackHole: 473281490
       Body: 1357204674
+      BoxWall: -1348070567
       Dash: 103917954
       Gun: -127546117
+      Heart: 1610008353
+      IWall: 1810403927
+      LWall: -151988195
+      MFWall: -460554574
       Missile: 2117973576
+      PlusWall: 1821458270
       Soot: -1473801395
       Tri: -1972587914
       Trial: 1119601559
       TurretBody: -641271364
       TurretGun: 379256238
+      Wall: 578498118
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 1

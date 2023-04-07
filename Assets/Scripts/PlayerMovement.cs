@@ -86,6 +86,9 @@ public class PlayerMovement : MonoBehaviour {
                 //Adding camera shake
                 CameraShake.Instance.ShakeCamera(1f, 0.2f);
 
+                this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(163, 141, 255, 100);
+                this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color32(174, 255, 172, 100);
+
                 dashIndicatorText.color = new Color(255, 254, 0, 0.5f);
             }
         }
@@ -106,6 +109,9 @@ public class PlayerMovement : MonoBehaviour {
 
                 dashCoolCounter = dashCoolDown;
                 boxCollider.enabled = true;
+
+                this.gameObject.GetComponent<SpriteRenderer>().color = new Color32(163, 141, 255, 255);
+                this.transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color32(174, 255, 172, 255);
             }
         }
 

@@ -8,6 +8,7 @@ TagManager:
   - HealthManager
   - SucidialEnemy
   - CanonEnemy
+  - Wall
   layers:
   - Default
   - TransparentFX
