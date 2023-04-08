@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcebc931c344ef9478583bdc47a1a5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchRadius: 5
+  searchRadius: 12
   aimAndShootScript: {fileID: 5227192039250876285}
 --- !u!114 &5227192039250876285
 MonoBehaviour:
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d86ecf15b385747a7acc9824170eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunRotationSpeed: 10
+  gunRotationSpeed: 15
   bulletPrefab: {fileID: 8332629133274405623, guid: 88adca7dfac1eaa478a5a7c4e92d91e5, type: 3}
   bulletTransform: {fileID: 5227192040161010087}
   shootingInterval: 2
@@ -582,7 +582,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.14230502, y: 0.09892672}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -593,7 +593,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.9211066, y: 2.9529376}
   m_EdgeRadius: 0
 --- !u!114 &5227192039585174302
 MonoBehaviour:

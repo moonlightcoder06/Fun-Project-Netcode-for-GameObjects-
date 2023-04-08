@@ -34,7 +34,6 @@ public class BlackHole : MonoBehaviour
         spawnedObject.AddComponent<RotationAndScaling>();
         spawnedObject.AddComponent<PlayerAttraction>();
 
-        print("Black completed");
     }
 
 }

@@ -27,6 +27,7 @@ public class RandomSpawnning : MonoBehaviour
 
         // Generating a random position within the boundaries
         Vector3 randomPosition = new Vector3(Random.Range(screenLeft - center , screenRight + center), Random.Range(screenBottom - center, screenTop + center), 0);
+        
 
         // Instantiating the GameObject at the random position
         // spawnedObject = Instantiate(Enemy, randomPosition, Quaternion.identity);
