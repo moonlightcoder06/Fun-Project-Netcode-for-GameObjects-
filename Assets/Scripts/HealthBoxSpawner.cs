@@ -30,7 +30,7 @@ public class HealthBoxSpawner : MonoBehaviour
         spawnedObject = Instantiate(HealthBox, randomPosition, Quaternion.identity);
 
         // Attaching the Rotating script
-        spawnedObject.AddComponent<RotationHealthBox>();
+        spawnedObject.AddComponent<RotationOnly>();
 
     }
 

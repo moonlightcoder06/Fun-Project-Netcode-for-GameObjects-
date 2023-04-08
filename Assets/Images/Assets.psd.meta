@@ -470,7 +470,7 @@ TextureImporter:
         width: 222
         height: 191
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -478,6 +478,48 @@ TextureImporter:
       bones: []
       spriteID: beb85cbb9fb20934d8175af1655d1b6d
       internalID: 1610008353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shield
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 67
+        width: 176
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a9f649263304f449016af05cd2c9a4
+      internalID: 854629461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShieldAsset
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 71
+        width: 172
+        height: 171
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48723757}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c474d980af68243845ce6138092265
+      internalID: 411085624
       vertices: []
       indices: 
       edges: []
@@ -505,6 +547,8 @@ TextureImporter:
       MFWall: -460554574
       Missile: 2117973576
       PlusWall: 1821458270
+      Shield: 854629461
+      ShieldAsset: 411085624
       Soot: -1473801395
       Tri: -1972587914
       Trial: 1119601559

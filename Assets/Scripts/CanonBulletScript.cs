@@ -26,10 +26,12 @@ public class CanonBulletScript : MonoBehaviour
     } // ApplyForceOnBullet
 
     void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.layer == 6) // When bullet hits ground i.e "Wall" then destroy itself.
+        if ( (collision.gameObject.layer == 6) || (collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Shield"))) // When bullet hits ground i.e "Wall" then destroy itself.
         {
+            print("ShieldCanon");
             Destroy(gameObject);
         } else if (collision.CompareTag("Player")) {
+            print("PlayerCanon");
             //collision.transform.GetChild(1).GetComponent<PlayerHealthManager>().TakeDamage(bulletDamageAmountToPlayer);
             playerHealthManager.GetComponent<PlayerHealthManager>().TakeDamage(bulletDamageAmountToPlayer);
             SelfDestruct();

@@ -14,23 +14,21 @@ public class HandleCollisionBetweenPlayerAndSucidalEnemy : MonoBehaviour
         playerHealthManager = GameObject.FindWithTag("HealthManager");
     }
 
-    void OnCollisionEnter2D(Collision2D collision) {
-
-
-        if (collision.gameObject.CompareTag("Wall")) {
+    private void OnTriggerEnter2D(Collider2D collision) {
+        // if ( (collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Shield")) )  {
+        if ((collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Shield"))) {
+            print("Shield");
             SelfDestruct();
-            print("Wall");
-        }
-
+        } 
+        
         if (collision.gameObject.CompareTag("Player")) {
+            print("Player");
             playerHealthManager.GetComponent<PlayerHealthManager>().TakeDamage(giveDamageToPlayer);
             SelfDestruct();
         }
-        
-       
 
-        
-    } // OnCollisionEnter2D
+    }
+
 
     void SelfDestruct() {
         Destroy(gameObject);
